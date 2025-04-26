@@ -41,9 +41,13 @@ cd /tmp
 ```
 
 2. **Make the script executable:**
-
+  **english version**
 ```bash
-chmod +x install_glpi_vfinal.sh
+chmod +x install_glpi_en.sh
+```
+**french version**
+```bash
+chmod +x install_glpi_fr.sh
 ```
 
 3. **Run the script as root:**
