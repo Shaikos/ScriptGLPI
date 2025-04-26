@@ -77,13 +77,13 @@ sudo ./install_glpi_en.sh
 6. **Secure your installation:**
    - After completing the GLPI web installation wizard, **run the script** to rename the `install.php` file:
 
-- **For English version:**
+- **English version:**
 
 ```bash
 sudo ./auto_remove_install_php_en.sh
 ```
 
-- **For French version:**
+- **French version:**
 
 ```bash
 sudo ./auto_remove_install_php_fr.sh
