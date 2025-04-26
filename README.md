@@ -121,7 +121,6 @@ You can **edit the script** depending on your needs:
 | **GLPI Version**       | Change the version of GLPI to download                                | Look for `wget https://github.com/glpi-project/glpi/releases/...` |
 | **Apache Config**      | Change the domain (currently `my.glpi.local`)                             | Edit `ServerName` inside `/etc/apache2/sites-available/glpi.conf` |
 | **PHP Version**        | Ensure the correct PHP version (currently `8.2`)                      | Update the `$PHP_INI_FILE` path in the script          |
-| **MariaDB Root Password** | Add `-p` options if your MariaDB root account requires a password | Add `-p` to `mysql -e` commands                       |
 
 ---
 
