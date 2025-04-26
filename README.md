@@ -37,7 +37,7 @@ More info in the 📄[Docs](https://glpi-install.readthedocs.io/en/latest/instal
 
 ```bash
 git clone https://github.com/Shaikos/ScriptGLPI.git
-cd your-repo-name
+cd /tmp
 ```
 
 2. **Make the script executable:**
