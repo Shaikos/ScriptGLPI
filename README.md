@@ -41,7 +41,7 @@ More info in the 📄 [Docs](https://glpi-install.readthedocs.io/en/latest/insta
 
 ```bash
 git clone https://github.com/Shaikos/ScriptGLPI.git
-cd /tpm
+cd ScriptGLPI
 ```
 
 2. **Make the script executable:**
