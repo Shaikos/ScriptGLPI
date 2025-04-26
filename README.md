@@ -74,8 +74,8 @@ sudo ./install_glpi_en.sh
    - Visit `http://your-server-ip/` or `http://my.glpi.local/` if you configure your `/etc/hosts` file.
 
 
-6. **(Optional but recommended) Secure your installation:**
-   - After completing the GLPI web installation wizard, **run the final security script** to rename the `install.php` file:
+6. **Secure your installation:**
+   - After completing the GLPI web installation wizard, **run the script** to rename the `install.php` file:
 
 - **For English version:**
 
