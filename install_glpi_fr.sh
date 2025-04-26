@@ -78,7 +78,7 @@ EOF
 echo "[8/8] Configuration d'Apache..."
 cat <<EOF > /etc/apache2/sites-available/glpi.conf
 <VirtualHost *:80>
-    ServerName glpi.local
+    ServerName my.glpi.local
     DocumentRoot /var/www/glpi/public
 
     <Directory /var/www/glpi/public>
@@ -144,4 +144,4 @@ IP=$(hostname -I | awk '{print $1}')
 echo
 echo "✅ Installation terminée avec succès !"
 echo "➡️  Accède à GLPI via : http://$IP/"
-echo "ℹ️  Utilise 'glpi.local' si tu modifies ton fichier /etc/hosts."
+echo "ℹ️  Utilise 'my.glpi.local' si tu modifies ton fichier /etc/hosts."
