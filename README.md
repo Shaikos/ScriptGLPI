@@ -73,8 +73,23 @@ sudo ./install_glpi_en.sh
    - After installation, the script will display your server's IP address.
    - Visit `http://your-server-ip/` or `http://my.glpi.local/` if you configure your `/etc/hosts` file.
 
----
 
+6. **(Optional but recommended) Secure your installation:**
+   - After completing the GLPI web installation wizard, **run the final security script** to rename the `install.php` file:
+
+- **For English version:**
+
+```bash
+sudo ./auto_remove_install_php_en.sh
+```
+
+- **For French version:**
+
+```bash
+sudo ./auto_remove_install_php_fr.sh
+```
+
+---
 ## ⚙️ What the Script Does
 
 - Updates the system packages.
