@@ -96,7 +96,7 @@ sudo ./auto_remove_install_php_fr.sh
 | Debian   | 10      | ⚠️ Never tried    |
 | Debian   | 11      | ⚠️ Never tried    |
 | Debian   | 12      | ✅                |
-| Ubuntu   | 24.04.2 | ⚠️ Never trie     |
+| Ubuntu   | 24.04.2 | ⚠️ Never tried    |
 | Ubuntu   | 25.04   | ⚠️ Never tried    |
 
 ## ⚙️ What the Script Does
