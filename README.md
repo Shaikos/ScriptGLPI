@@ -42,11 +42,11 @@ cd /tmp
 
 2. **Make the script executable:**
    
-  **english version**
+   -english version
 ```bash
 chmod +x install_glpi_en.sh
 ```
-**french version**
+   -french version
 ```bash
 chmod +x install_glpi_fr.sh
 ```
