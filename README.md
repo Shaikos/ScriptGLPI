@@ -36,7 +36,7 @@ More info in the 📄[Docs](https://glpi-install.readthedocs.io/en/latest/instal
 1. **Clone the repository or download the script:**
 
 ```bash
-git clone https://github.com/yourusername/ScriptGLPI.git
+git clone https://github.com/Shaikos/ScriptGLPI.git
 cd your-repo-name
 ```
 
