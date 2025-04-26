@@ -92,7 +92,7 @@ sudo ./auto_remove_install_php_fr.sh
 ---
 
 | OS       | VERSION | COMPATIBILITY      |
-|:---------:|:-------:|:-----------------:|
+|:---------|---------|--------------------|
 | Debian   | 10      | ⚠️ Never tried    |
 | Debian   | 11      | ⚠️ Never tried    |
 | Debian   | 12      | ✅                |
