@@ -46,7 +46,7 @@ cd /tmp
 ```bash
 chmod +x install_glpi_en.sh
 ```
-   - french version
+    - french version
 ```bash
 chmod +x install_glpi_fr.sh
 ```
