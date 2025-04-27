@@ -105,9 +105,15 @@ fi
 echo "Sécurisation des cookies PHP..."
 PHP_INI_FILE="/etc/php/8.2/apache2/php.ini"
 
+# Trouve la version active de PHP pour Apache
+PHP_VERSION=$(php -v | head -n 1 | awk '{print $2}' | cut -d. -f1,2)
+
+# Chemin possible du php.ini pour Apache
+PHP_INI_FILE="/etc/php/$PHP_VERSION/apache2/php.ini"
+
 # Vérifie si le fichier php.ini est bien présent
 if [ -f "$PHP_INI_FILE" ]; then
-    echo "Le fichier php.ini est trouvé à : $PHP_INI_FILE"
+    echo "✅ Le fichier php.ini est trouvé à : $PHP_INI_FILE"
     
     # Affiche la ligne avant modification
     echo "Avant modification :"
@@ -115,9 +121,7 @@ if [ -f "$PHP_INI_FILE" ]; then
 
     # Vérifie si la ligne existe et est vide, ou n'existe pas, puis la modifie
     if grep -q "session.cookie_httponly" "$PHP_INI_FILE"; then
-        if grep -q "^session.cookie_httponly\s*=" "$PHP_INI_FILE" && ! grep -q "session.cookie_httponly\s*=" "$PHP_INI_FILE" | grep -q "="; then
-            sudo sed -i "s/^session.cookie_httponly\s*=.*$/session.cookie_httponly = On/" "$PHP_INI_FILE"
-        fi
+        sudo sed -i "s/^session.cookie_httponly\s*=.*/session.cookie_httponly = On/" "$PHP_INI_FILE"
     else
         echo "session.cookie_httponly = On" | sudo tee -a "$PHP_INI_FILE"
     fi
