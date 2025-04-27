@@ -105,28 +105,33 @@ fi
 echo "Securing PHP cookies..."
 PHP_INI_FILE="/etc/php/8.2/apache2/php.ini"
 
-# Check if php.ini file exists
+# Find the active PHP version for Apache
+PHP_VERSION=$(php -v | head -n 1 | awk '{print $2}' | cut -d. -f1,2)
+
+# Possible path to php.ini for Apache
+PHP_INI_FILE="/etc/php/$PHP_VERSION/apache2/php.ini"
+
+# Check if the php.ini file exists
 if [ -f "$PHP_INI_FILE" ]; then
-    echo "php.ini file found at: $PHP_INI_FILE"
+    echo "✅ php.ini file found at: $PHP_INI_FILE"
     
-    # Show line before modification
+    # Display the line before modification
     echo "Before modification:"
     grep "session.cookie_httponly" "$PHP_INI_FILE"
 
-    # Check if the line exists, and modify or add it
+    # Check if the line exists, and if so, modify it
     if grep -q "session.cookie_httponly" "$PHP_INI_FILE"; then
-        if grep -q "^session.cookie_httponly\s*=" "$PHP_INI_FILE" && ! grep -q "session.cookie_httponly\s*=" "$PHP_INI_FILE" | grep -q "="; then
-            sudo sed -i "s/^session.cookie_httponly\s*=.*$/session.cookie_httponly = On/" "$PHP_INI_FILE"
-        fi
+        sudo sed -i "s/^session.cookie_httponly\s*=.*/session.cookie_httponly = On/" "$PHP_INI_FILE"
     else
+        # If the line does not exist, add it at the end
         echo "session.cookie_httponly = On" | sudo tee -a "$PHP_INI_FILE"
     fi
 
-    # Show line after modification
+    # Display the line after modification
     echo "After modification:"
     grep "session.cookie_httponly" "$PHP_INI_FILE"
 else
-    echo "❌ Apache php.ini file not found at the expected location ($PHP_INI_FILE)."
+    echo "❌ The Apache php.ini file was not found at the expected location ($PHP_INI_FILE)."
     exit 1
 fi
 
