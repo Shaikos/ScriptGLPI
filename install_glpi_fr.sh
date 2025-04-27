@@ -12,6 +12,17 @@ if [ -z "$BASH_VERSION" ]; then
     exit 1
 fi
 
+# === Ajout du dépôt PHP 8.3 ===
+echo "[0/8] Ajout du dépôt PHP 8.3..."
+apt install -y lsb-release ca-certificates apt-transport-https software-properties-common gnupg2
+
+if ! command -v add-apt-repository &> /dev/null; then
+    apt install -y software-properties-common
+fi
+
+add-apt-repository ppa:ondrej/php -y
+apt update
+
 # === Demande d'infos utilisateur ===
 read -p "Nom de la base de données GLPI : " DB_NAME
 read -p "Nom de l'utilisateur MariaDB pour GLPI : " DB_USER
@@ -24,7 +35,7 @@ apt update && apt upgrade -y
 
 # === Installation des paquets nécessaires ===
 echo "[2/8] Installation des paquets Apache, MariaDB, PHP et extensions..."
-apt install -y apache2 mariadb-server php php-common php-cli php-gd php-intl php-mbstring php-mysql php-xml php-xmlrpc php-zip php-curl php-bz2 php-exif php-ldap php-opcache unzip wget apache2-utils
+apt install -y apache2 mariadb-server php8.3 php8.3-common php8.3-cli php8.3-gd php8.3-intl php8.3-mbstring php8.3-mysql php8.3-xml php8.3-xmlrpc php8.3-zip php8.3-curl php8.3-bz2 php8.3-exif php8.3-ldap php8.3-opcache libapache2-mod-php8.3 unzip wget apache2-utils
 
 # === Vérification de l'installation de MariaDB ===
 echo "[3/8] Vérification et configuration de MariaDB..."
@@ -103,12 +114,7 @@ fi
 
 # Sécuriser les cookies PHP en modifiant session.cookie_httponly dans php.ini
 echo "Sécurisation des cookies PHP..."
-PHP_INI_FILE="/etc/php/8.2/apache2/php.ini"
-
-# Trouve la version active de PHP pour Apache
-PHP_VERSION=$(php -v | head -n 1 | awk '{print $2}' | cut -d. -f1,2)
-
-# Chemin possible du php.ini pour Apache
+PHP_VERSION="8.3"
 PHP_INI_FILE="/etc/php/$PHP_VERSION/apache2/php.ini"
 
 # Vérifie si le fichier php.ini est bien présent
@@ -134,8 +140,10 @@ else
     exit 1
 fi
 
-# Redémarre Apache pour appliquer les changements
-sudo systemctl restart apache2
+# Activer PHP 8.3 sur Apache
+a2dismod php*
+a2enmod php8.3
+systemctl restart apache2
 
 # Activer les modules Apache
 a2enmod rewrite
