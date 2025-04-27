@@ -133,17 +133,6 @@ cat <<EOF > /etc/apache2/sites-available/glpi.conf
 </VirtualHost>
 EOF
 
-# Activer PHP sur Apache
-a2dismod php*
-a2enmod php$PHP_VERSION
-systemctl restart apache2
-
-# Activer les modules Apache
-a2enmod rewrite
-a2ensite glpi
-a2dissite 000-default
-systemctl reload apache2
-
 # Sécuriser les cookies PHP
 echo "Sécurisation des cookies PHP..."
 PHP_INI_FILE="/etc/php/$PHP_VERSION/apache2/php.ini"
@@ -162,6 +151,17 @@ else
     echo "❌ Le fichier php.ini d'Apache n'a pas été trouvé."
     exit 1
 fi
+
+# Activer PHP sur Apache
+a2dismod php*
+a2enmod php$PHP_VERSION
+systemctl restart apache2
+
+# Activer les modules Apache
+a2enmod rewrite
+a2ensite glpi
+a2dissite 000-default
+systemctl reload apache2
 
 # === Fin de l'installation ===
 IP=$(hostname -I | awk '{print $1}')
