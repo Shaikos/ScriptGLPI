@@ -153,7 +153,7 @@ else
 fi
 
 # Activer PHP sur Apache
-a2dismod php*
+a2dismod php$PHP_VERSION
 a2enmod php$PHP_VERSION
 systemctl restart apache2
 
