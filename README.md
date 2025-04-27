@@ -44,37 +44,23 @@ git clone https://github.com/Shaikos/ScriptGLPI.git
 cd ScriptGLPI
 ```
 
-2. **Make the script executable:**
-
-- **English version:**
-
-```bash
-chmod +x install_glpi_en.sh
-```
-
-- **French version:**
-
-```bash
-chmod +x install_glpi_fr.sh
-```
-
-3. **Run the script as root:**
+2. **Run the script as root:**
 
 ```bash
 sudo ./install_glpi_en.sh
 ```
 *(or `install_glpi_fr.sh` if you want the French version)*
 
-4. **Follow the prompts:**
+3. **Follow the prompts:**
    - Enter the name for your **GLPI database**.
    - Enter the **MariaDB user** and **password** that will have access to the GLPI database.
 
-5. **Access GLPI:**
+4. **Access GLPI:**
    - After installation, the script will display your server's IP address.
    - Visit `http://your-server-ip/` or `http://my.glpi.local/` if you configure your `/etc/hosts` file.
 
 
-6. **Secure your installation:**
+5. **Secure your installation:**
    - After completing the GLPI web installation wizard, **run the script** to rename the `install.php` file:
 
 - **English version:**
