@@ -26,7 +26,7 @@ fi
 
 # Choisir la version PHP en fonction de la distribution
 if [[ "$DISTRO" == "ubuntu" ]]; then
-    PHP_VERSION="8.4"
+    PHP_VERSION="8.3"
     echo "➡️ Ubuntu détecté : installation de PHP $PHP_VERSION"
 elif [[ "$DISTRO" == "debian" ]]; then
     PHP_VERSION="8.2"
