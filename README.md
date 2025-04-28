@@ -5,6 +5,7 @@
   <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge">
   <img src="https://img.shields.io/badge/GLPI-10.0.18-blue?style=for-the-badge">
   <img src="https://img.shields.io/badge/OS-Debian%2FUbuntu-yellow?style=for-the-badge">
+  <img alt="GLPI IMG" src="https://glpi-project.org/wp-content/uploads/2022/01/assets-2.png">
 </p>
 
 ---
