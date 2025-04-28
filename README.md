@@ -11,7 +11,7 @@
 
 # GLPI Auto-Installation Script
 
-This script automates the full installation of **GLPI** (IT asset management and helpdesk software) on a Debian/Ubuntu server.  
+This script automates the full installation of **GLPI** on a Debian/Ubuntu server.  
 It installs and configures **Apache**, **MariaDB**, **PHP**, and sets up GLPI ready to use.
 
 ## 🧩 Default Accounts
