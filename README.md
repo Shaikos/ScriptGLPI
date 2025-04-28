@@ -63,17 +63,11 @@ sudo ./install_glpi_en.sh
 5. **Secure your installation:**
    - After completing the GLPI web installation wizard, **run the script** to rename the `install.php` file:
 
-- **English version:**
-
 ```bash
 sudo ./auto_remove_install_php_en.sh
 ```
 
-- **French version:**
-
-```bash
-sudo ./auto_remove_install_php_fr.sh
-```
+*(or `install_glpi_fr.sh` if you want the French version)*
 
 ---
 
@@ -93,7 +87,7 @@ sudo ./auto_remove_install_php_fr.sh
 - Updates the system packages.
 - Installs Apache, MariaDB, PHP, and all required PHP extensions.
 - Configures MariaDB (creates a database and user for GLPI).
-- Downloads and installs **GLPI 10.0.18**.
+- Downloads and installs **GLPI**.
 - Configures Apache virtual host for GLPI.
 - Secures PHP sessions (`session.cookie_httponly = On`).
 - Creates necessary folders and sets permissions.
@@ -101,24 +95,10 @@ sudo ./auto_remove_install_php_fr.sh
 
 ---
 
-## 🔧 Customization
-
-You can **edit the script** depending on your needs:
-
-| Section               | What to Modify                                                        | Where                                                  |
-|------------------------|------------------------------------------------------------------------|--------------------------------------------------------|
-| **GLPI Version**       | Change the version of GLPI to download                                | Look for `wget https://github.com/glpi-project/glpi/releases/...` |
-| **Apache Config**      | Change the domain (currently `my.glpi.local`)                             | Edit `ServerName` inside `/etc/apache2/sites-available/glpi.conf` |
-| **PHP Version**        | Ensure the correct PHP version (currently `8.2`)                      | Update the `$PHP_INI_FILE` path in the script          |
-
----
-
 ## ❗ Important Notes
 
 - This script **does not** install SSL certificates. You should manually set up HTTPS if needed.
 - Ensure your server's firewall allows HTTP/HTTPS traffic (ports 80/443).
-- It is highly recommended to configure a proper domain name and SSL certificate for production environments.
-- Remember to secure your MariaDB installation using `mysql_secure_installation`.
 
 ---
 
