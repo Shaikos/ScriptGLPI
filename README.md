@@ -9,11 +9,11 @@
 </p>
 
 ---
-
-# GLPI Auto-Installation Script
-
-This script automates the full installation of **GLPI** on a Debian/Ubuntu server.  
+## About this script
+This script automates the full installation of **GLPI** (currently 10.0.18) on a Debian/Ubuntu server.  
 It installs and configures **Apache**, **MariaDB**, **PHP**, and sets up GLPI ready to use.
+
+Please note: GLPI is installed without SSL by default. If you plan to make it accessible externally or require SSL encryption, it is recommended to set up a reverse proxy.
 
 ## 🧩 Default Accounts
 
