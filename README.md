@@ -83,17 +83,6 @@ sudo ./auto_remove_install_php_en.sh
 | **Ubuntu**  | 24.04       | ✅ Compatible       |
 | **Ubuntu**  | 25.04       | ✅ Compatible       |
 
-## ⚙️ What the Script Does
-
-- Updates the system packages.
-- Installs Apache, MariaDB, PHP, and all required PHP extensions.
-- Configures MariaDB (creates a database and user for GLPI).
-- Downloads and installs **GLPI**.
-- Configures Apache virtual host for GLPI.
-- Secures PHP sessions (`session.cookie_httponly = On`).
-- Creates necessary folders and sets permissions.
-- Restarts Apache with proper modules enabled.
-
 ---
 
 ## ❗ Important Notes
