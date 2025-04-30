@@ -98,7 +98,7 @@ mysql -e "FLUSH PRIVILEGES;"
 # === Download and install GLPI ===
 echo "[5/9] Downloading GLPI..."
 cd /tmp
-wget https://github.com/glpi-project/glpi/releases/download/10.0.18/glpi-10.0.18.tgz -O /tmp/glpi.tgz
+wget https://github.com/glpi-project/glpi/releases/download/${version}/glpi-${version}.tgz -O /tmp/glpi.tgz
 
 if [[ ! -f /tmp/glpi.tgz ]]; then
   echo "❌ Error: the glpi.tgz file was not downloaded."
