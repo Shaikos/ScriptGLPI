@@ -40,7 +40,7 @@ fi
 version=10.0.18
 echo "This script install by default the version 10.0.18 of GLPI"
 read -p "Would you like to install another version of GLPI? (y/N): " reponse
-if [ "$reponse" = "o" ]; then
+if [ "$reponse" = "y" ]; then
     read -p "Please enter the desired GLPI version number in the following format X.X.X : " version
     echo "Installation of GLPI version ${version}..."
 fi
@@ -48,7 +48,7 @@ fi
 # Choix de la version php
 echo "This script install by default the version $PHP_VERSION of PHP"
 read -p "Would you like to install another version of PHP? (y/N): " reponse2
-if [ "$reponse2" = "o" ]; then
+if [ "$reponse2" = "y" ]; then
     read -p "Please enter the desired PHP version number in the following format X.X : " PHP_VERSION
     echo "Installation of PHP version $PHP_VERSION..."
 fi
