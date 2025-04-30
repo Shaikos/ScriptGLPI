@@ -81,7 +81,7 @@ apt update && apt upgrade -y
 
 # === Installation des paquets nécessaires ===
 echo "[3/9] Installation des paquets Apache, MariaDB, PHP et extensions..."
-apt install -y apache2 mariadb-server php$PHP_VERSION php$PHP_VERSION-common php$PHP_VERSION-cli php$PHP_VERSION-gd php$PHP_VERSION-intl php$PHP_VERSION-mbstring php$PHP_VERSION-mysql php$PHP_VERSION-xml php$PHP_VERSION-xmlrpc php$PHP_VERSION-zip php$PHP_VERSION-curl php$PHP_VERSION-bz2 php$PHP_VERSION-exif php$PHP_VERSION-ldap php$PHP_VERSION-opcache libapache2-mod-php$PHP_VERSION unzip wget apache2-utils
+apt install -y apache2 mariadb-server php$PHP_VERSION php$PHP_VERSION-common php$PHP_VERSION-cli php$PHP_VERSION-gd php$PHP_VERSION-intl php$PHP_VERSION-mbstring php$PHP_VERSION-bcmath php$PHP_VERSION-mysql php$PHP_VERSION-xml php$PHP_VERSION-xmlrpc php$PHP_VERSION-zip php$PHP_VERSION-curl php$PHP_VERSION-bz2 php$PHP_VERSION-exif php$PHP_VERSION-ldap php$PHP_VERSION-opcache libapache2-mod-php$PHP_VERSION unzip wget apache2-utils
 
 # === Vérification de l'installation de MariaDB ===
 echo "[4/9] Vérification et configuration de MariaDB..."
