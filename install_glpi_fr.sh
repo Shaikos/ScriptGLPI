@@ -36,6 +36,23 @@ else
     exit 1
 fi
 
+# Choix de la version GLPI
+version=10.0.18
+echo "Ce script install par défault la version 10.0.18 de GLPI"
+read -p "Souhaitez vous installer une autre version de GLPI? (o/N): " reponse
+if [ "$reponse" = "o" ]; then
+    read -p "Veuillez entrer le numéro de version GLPI souhaité dans le format suivant X.X.X : " version
+    echo "Installation de GLPI version ${version}..."
+fi
+
+# Choix de la version php
+echo "Ce script install par défault la version $PHP_VERSION de PHP"
+read -p "Souhaitez vous installer une autre version de PHP? (o/N): " reponse2
+if [ "$reponse2" = "o" ]; then
+    read -p "Veuillez entrer le numéro de version PHP souhaité dans le format suivant X.X : " PHP_VERSION
+    echo "Installation de PHP version $PHP_VERSION..."
+fi
+
 # === Ajout du dépôt PHP ===
 echo "[1/9] Ajout du dépôt PHP..."
 apt install -y lsb-release ca-certificates apt-transport-https software-properties-common gnupg2
